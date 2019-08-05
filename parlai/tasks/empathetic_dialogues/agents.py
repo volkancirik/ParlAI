@@ -23,6 +23,9 @@ class EmpatheticDialogueTeacher(FixedDialogTeacher):
 
         self.num_exs = sum([(len(d) + 1) // 2 for d in self.data])
         self.num_eps = len(self.data)
+        self.random = True
+        # Shuffle all datasets so that multiple responses from the same conversation are
+        # unlikely to be within the same batch
         self.reset()
 
     def num_episodes(self):
